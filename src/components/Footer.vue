@@ -37,6 +37,8 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style scoped>
+    footer{
+        margin-top: 2em
+    }
+</style>>

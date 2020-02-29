@@ -9,10 +9,10 @@
           </li>
         </ul>
       </div>
-      <button class="btn-floating btn-large halfway-fab waves-effect waves-light pink" @click="deleteSmoothie(smoothie.id)">
+      <button class=" btn-floating btn-large halfway-fab waves-effect waves-light pink" @click="deleteSmoothie(smoothie.id)">
                 <i class="material-icons">delete</i>
       </button>
-      <router-link :to="{name: 'editSmoothie', params: {slug:smoothie.slug}}" class="btn-floating btn-large halfway-fab waves-effect waves-light pink left">
+      <router-link :to="{name: 'editSmoothie', params: {slug:smoothie.slug}}" class=" btn-floating btn-large halfway-fab waves-effect waves-light pink left">
         <i class="material-icons">edit</i>
       </router-link>
     </div>   
@@ -59,7 +59,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .card{
-    margin: 1em;
+    margin: 1.5em 1em;
   }
   .card-title{
     text-align: center
