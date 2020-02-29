@@ -1,6 +1,7 @@
 # maniac-smoothies
 
-> A Vue.js project
+> A Vue.js project created as a practice on the Frame Work,
+> check the live site deployed on [https://maniac-smoothies.firebaseapp.com](https://maniac-smoothies.firebaseapp.com)
 
 ## Build Setup
 
