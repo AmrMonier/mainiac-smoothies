@@ -9,23 +9,46 @@
           </li>
         </ul>
       </div>
+      <button class="btn-floating btn-large halfway-fab waves-effect waves-light pink" @click="deleteSmoothie(smoothie.id)">
+                <i class="material-icons">delete</i>
+      </button>
+      <router-link :to="{name: 'editSmoothie', params: {slug:smoothie.slug}}" class="btn-floating btn-large halfway-fab waves-effect waves-light pink left">
+        <i class="material-icons">edit</i>
+      </router-link>
     </div>   
   </div>
 </template>
 
 <script>
+import db_connection from '@/firebase/init'
 export default {
     name: 'Index',
     data(){
         return {
-          smoothies:[
-            {name: 'maddness', slug: 'maddness', ingredients:['choco', 'bananas', 'rice'], id:1},
-            {name: 'wegobn', slug: 'wegobn', ingredients:['White choco', 'pinapple', 'meat'], id:2},
-            {name: 'henfoyu', slug: 'henfoyu', ingredients:['Marshemelo', 'orange', 'peans'], id:3},
-            {name: 'jermasheo', slug: 'jermasheo', ingredients:['Oreo', 'strawbery', 'chicken nuggets'], id:4},
-            {name: 'bollans', slug: 'bollans', ingredients:['biscuits', 'apples', 'chicken wings'], id:5},
-          ]
+          smoothies:[]
         }
+    },
+    methods:{
+      deleteSmoothie(id){
+        db_connection.collection('smoothies').doc(id).delete().then(
+          () => {
+            this.smoothies = this.smoothies.filter(s => {
+              return s.id !== id
+            })
+          }
+        )
+      }
+    },
+    created(){
+      db_connection.collection('smoothies').get().then(
+        Snapshot => {
+          Snapshot.forEach(doc => {
+            let smoothie = doc.data()
+            smoothie.id = doc.id
+            this.smoothies.push(smoothie)
+          });
+        }
+      );
     }
 }
 </script>

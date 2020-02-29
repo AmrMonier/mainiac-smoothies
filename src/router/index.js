@@ -19,7 +19,7 @@ export default new Router({
       component: CreateSmoothie
     },
     {
-      path: '/smoothie/:id/edit',
+      path: '/smoothie/:slug/edit',
       name: 'editSmoothie',
       component: EditSmoothie
     },

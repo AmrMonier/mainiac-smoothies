@@ -4,7 +4,7 @@
         <router-link :to="{name: 'index'}">
             <span class="nav-title">Maniac Smoothies</span>
         </router-link>
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light pink">
+        <a class="btn-floating btn-large halfway-fab waves-effect waves-light pink">
             <router-link :to="{name: 'createSmoothie'}">
                 <i class="material-icons">add</i>
             </router-link>
